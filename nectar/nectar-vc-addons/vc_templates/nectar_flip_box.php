@@ -31,14 +31,26 @@ $style2 = null;
 
 if(!empty($image_url_1)) {
 	
-	$bg_image_src = wp_get_attachment_image_src($image_url_1, 'full');
-	$style .= 'background-image: url(\''.$bg_image_src[0].'\'); ';
+	if(!preg_match('/^\d+$/',$image_url_1)){
+                    
+        $style .= 'background-image: url('.$image_url_1 . '); ';
+    
+    } else {
+		$bg_image_src = wp_get_attachment_image_src($image_url_1, 'full');
+		$style .= 'background-image: url(\''.$bg_image_src[0].'\'); ';
+	}
 }
 
 if(!empty($image_url_2)) {
-	
-	$bg_image_src_2 = wp_get_attachment_image_src($image_url_2, 'full');
-	$style2 .= 'background-image: url(\''.$bg_image_src_2[0].'\'); ';
+
+	if(!preg_match('/^\d+$/',$image_url_2)){
+                    
+        $style2 .= 'background-image: url('.$image_url_2 . '); ';
+    
+    } else {
+		$bg_image_src_2 = wp_get_attachment_image_src($image_url_2, 'full');
+		$style2 .= 'background-image: url(\''.$bg_image_src_2[0].'\'); ';
+	}
 }
 
 if(!empty($bg_color)) 
@@ -46,12 +58,6 @@ if(!empty($bg_color))
 if(!empty($bg_color_2)) 
 	$style2 .= 'background-color: '.$bg_color_2.'; ';
 
-
-if(!empty($image_url_2)) {
-	
-	$bg_image_src_2 = wp_get_attachment_image_src($image_url_2, 'full');
-	$style2 .= 'background-image: url(\''.$bg_image_src_2[0].'\'); ';
-}
 
 
 if(!empty($min_height)) {
@@ -78,8 +84,8 @@ switch($icon_family) {
 	case 'steadysets':
 		$icon = $icon_steadysets;
 		break;
-	case 'linecons':
-		$icon = $icon_linecons;
+	case 'linea':
+		$icon = $icon_linea;
 		break;
 	case 'iconsmind':
 			$icon = $icon_iconsmind;

@@ -9,14 +9,15 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $post, $options;
+global $post, $nectar_options;
 
-$tab_pos = (!empty($options['product_tab_position']) && $options['product_tab_position'] == 'fullwidth') ? 'fullwidth': 'default';
+$tab_pos = (!empty($nectar_options['product_tab_position'])) ? $nectar_options['product_tab_position'] : 'default';
 
-$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', __( 'Product Description', 'woocommerce' ) ) );
+$heading = esc_html( apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'woocommerce' ) ) );
+
 ?>
 
-<?php if ( $heading && $tab_pos != 'fullwidth'): ?>
+<?php if ( $heading && $tab_pos != 'fullwidth' && $tab_pos != 'fullwidth_centered'): ?>
   <h2><?php echo $heading; ?></h2>
 <?php endif; ?>
 

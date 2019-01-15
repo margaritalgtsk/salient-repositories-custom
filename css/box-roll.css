@@ -18,6 +18,7 @@ html {
 	overflow: hidden!important;
 }
 
+
  .container-wrap.no-scroll {
  	margin-top: 0!important;
 	overflow: hidden!important;
@@ -32,6 +33,9 @@ html {
  /*.container-wrap.no-scroll .main-content > .row > div > div[class*="col"] { opacity: 0; }
  .container-wrap.auto-height .main-content > .row > div > div[class*="col"] { opacity: 1; } */
 
+body.material .ocm-effect-wrap {
+	height: 100%;
+}
 
 #ajax-content-wrap.no-scroll {
 	height: 100%!important;
@@ -55,6 +59,12 @@ html {
 
 .container-wrap.auto-height, #footer-outer.auto-height {
 	height: auto!important;
+}
+
+.container-wrap.no-trans {
+	-webkit-transform: none;
+	-moz-transform: none;
+	transform: none;
 }
 
 #header-space {
